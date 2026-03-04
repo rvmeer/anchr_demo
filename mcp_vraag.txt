@@ -1,0 +1,1 @@
+maak een html waarin je met een barchart het totaal bedrag van de verkopen toont voor de 10 best verkopende albums, zet bij het album ook de artiest. 

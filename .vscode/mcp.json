@@ -1,0 +1,34 @@
+{
+	"servers": {
+		"localhost/postgresql-mcp-server": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"--registry",
+				"https://registry.npmjs.org",
+				"@henkey/postgres-mcp-server",
+				"--connection-string",
+				"postgresql://rvmeer@localhost:5432/chinook"
+			],
+			"env": {
+				"POSTGRES_CONNECTION_STRING": "postgresql://rvmeer@localhost:5432/chinook"
+			},
+			"gallery": "https://mcpreg-api-prod-h7wi4hn4gncvm.thankfulground-51a03cfa.westeurope.azurecontainerapps.io",
+			"version": "1.0.0"
+		}
+	},
+	"inputs": [
+		{
+			"id": "POSTGRES_CONNECTION_STRING",
+			"type": "promptString",
+			"description": "PostgreSQL connection URL (alternative to --connection-string argument)",
+			"password": false
+		},
+		{
+			"id": "connection-string",
+			"type": "promptString",
+			"description": "PostgreSQL connection URL (e.g., postgresql://user:password@host:port/database)",
+			"password": false
+		}
+	]
+}
