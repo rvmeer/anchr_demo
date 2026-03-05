@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server"
+    }
+  ],
+  "info": {
+    "title": "Addition Service",
+    "version": "1.0.0",
+    "description": "A simple API to add two numbers.",
+    "contact": {
+      "name": "API Support",
+      "email": "support@example.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Math",
+      "description": "Math operations"
+    }
+  ],
+  "paths": {
+    "/add": {
+      "post": {
+        "operationId": "addNumbers",
+        "tags": ["Math"],
+        "summary": "Add two numbers",
+        "description": "Returns the sum of two numbers provided in the request body.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "number",
+                    "description": "First number"
+                  },
+                  "b": {
+                    "type": "number",
+                    "description": "Second number"
+                  }
+                },
+                "required": ["a", "b"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sum of the two numbers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "number",
+                      "description": "The sum of a and b."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  }
+}
