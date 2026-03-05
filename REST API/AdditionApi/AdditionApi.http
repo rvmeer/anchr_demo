@@ -1,0 +1,11 @@
+@AdditionApi_HostAddress = http://localhost:3000
+
+POST {{AdditionApi_HostAddress}}/add
+Content-Type: application/json
+
+{
+  "a": 3,
+  "b": 5
+}
+
+###
